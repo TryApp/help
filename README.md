@@ -1,37 +1,30 @@
-## Welcome to GitHub Pages
+## iOS install popup did not appear
+If the iOS popup "dl.dropboxusercontent.com would like to install…" did not appear, check that you don't already have the same app installed from the AppStore.
 
-You can use the [editor on GitHub](https://github.com/TryApp/help/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+If an app with the same bundle identifier is already installed on the device from the AppStore, nothing will happen.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+Delete the app installed from the AppStore to be able to install this one.
 
-### Markdown
+## Unable to download app popup
+If an "Unable to download app" popup appears after some time, first check your internet connection, and be sure that your device is not behind a firewall that may prevent downloading .ipa files.
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+Sadly, iOS won't give any detailed information on what went wrong. Check on the previous page if there are any warnings. Most common installation issues are:
+- expired provisioning profile
+- device UDID not in the provisioning profile
+- incompatible device (check minimum iOS version, device family, required device capabilities and supported architectures)
+- tapped install button multiple times
+- device storage is full
+- app is over 100 MB and downloaded over a cellular connection
 
-```markdown
-Syntax highlighted code block
+## Untrusted Enterprise Developer
+Starting from iOS 9, the developer has to be trusted by the device, otherwise a popup will appear and prevent using the app.
 
-# Header 1
-## Header 2
-### Header 3
+On iOS 9.0/9.1, go to Settings > General > Profiles > tap on the developer's profile, and tap on Trust.
 
-- Bulleted
-- List
+On iOS 9.2+, go to Settings > General > Device Management > tap on the developer's profile, and tap on Trust.
 
-1. Numbered
-2. List
+## Nothing seems to happen
+After tapping the "Install" button in the popup, if nothing seems to happen and you are on this page on **Safari**, check your device's home screen: the installation should be in progress: you should see the icon of the app somewhere and a progress indicator.
 
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/TryApp/help/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+## Otherwise
+Contact your app developer, so they can double-check the app and provide you with support.
